@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.sec {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+}
+.sec .dot {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+  transition: box-shadow 0.5s;
+}
+.sec .dot:active {
+  box-shadow: 0 0 0 200vh white;
+  border: 2px solid #111;
+}
+.sec .dot.active {
+  background: #000;
+  border: 2px solid #111;
+}
+
+.sec .dot.active:active {
+  box-shadow: 0 0 0 200vh #111;
+  border: 2px solid white;
+}
+
+.sec .dot::before {
+  content: "Click For Light Mode";
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+/* .sec .dot:active::before {
+  content: "Dark Mode";
+  color: black !important;
+} */
+.sec .dot:active::before {
+  content: "Click For Dark Mode";
+  color: black !important;
+}
+.sec h2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18vw;
+  background: black;
+  color: white;
+  user-select: none;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  mix-blend-mode: multiply;
+}
+
+.sec.active h2 {
+  color: black !important;
+  background: white;
+  /* mix-blend-mode: screen; */
+}
+
+.sec video {
+  position: absolute;
+  /* z-index: 100; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
